@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: expressdeliveryservice
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: COMPANY_NAME
+        value: expressdeliveryservice
+      - key: CITY
+        value: Denver, Colorado
+      - key: CONTACT_EMAIL
+        value: expressdeliveryservice803@gmail.com
+      - key: PHONE_DISPLAY
+        value: (630) 287-9378
+      - key: WA_NUMBER
+        value: 16302879378
