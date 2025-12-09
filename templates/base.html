@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ app_name }} — Express Delivery</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="brand">
+      <strong>{{ app_name }}</strong>
+      <small>Trusted & reliable • Branches worldwide</small>
+    </div>
+    <div class="links"><a href="#contact">Contact</a></div>
+  </nav>
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer>
+  <div class="container foot">
+    <div>© {{ app_name }}</div>
+    <div class="muted">Head office: {{ city }} • Branches in all countries</div>
+  </div>
+</footer>
+</body>
+</html>
