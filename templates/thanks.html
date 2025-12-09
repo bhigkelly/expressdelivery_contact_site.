@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container narrow">
+  <div class="card">
+    <h2>Almost done ✔</h2>
+    <p>Tap an option below to send your message to management.</p>
+    <div class="actions">
+      <a class="btn" href="{{ wa_link }}" target="_blank">Send via WhatsApp</a>
+      <a class="btn secondary" href="{{ mailto }}">Send via Email</a>
+      <a class="btn secondary" href="tel:{{ phone }}">Call us</a>
+    </div>
+    <details>
+      <summary>Preview your message</summary>
+      <p><strong>Subject:</strong> {{ subject }}</p>
+      <pre class="preview">{{ message }}</pre>
+    </details>
+    <p><a class="link" href="{{ url_for('home') }}">Back to Home</a></p>
+  </div>
+</section>
+{% endblock %}
