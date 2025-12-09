@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero container">
+  <div class="left">
+    <h1>Contact our management team</h1>
+    <p class="muted">Express delivery from {{ city }} with branches worldwide. Contact management directly.</p>
+    <ul class="bullets">
+      <li>📍 {{ city }}</li>
+      <li>🌍 Branches in all countries</li>
+      <li>✉ <a href="mailto:{{ email }}">{{ email }}</a></li>
+      <li>📞 <a href="tel:{{ phone }}">{{ phone }}</a></li>
+      <li>💬 <a target="_blank" href="https://wa.me/{{ wa }}">WhatsApp us</a></li>
+    </ul>
+  </div>
+  <div class="card right" id="contact">
+    <h3>Send a message</h3>
+    <form action="{{ url_for('contact') }}" method="post">
+      <label>Your name</label>
+      <input name="name" placeholder="Your name" required />
+      <label>Subject</label>
+      <input name="subject" placeholder="Pickup request / Pricing / Support" />
+      <label>Your message</label>
+      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+      <button class="btn" type="submit">Continue</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
